@@ -4,30 +4,26 @@ import java.util.Scanner;
 
 public class Data implements IData{
 
-    Scanner scanner;
+    private IReader reader;
+    private IPrinter printer;
 
-    public Data(Scanner scanner) {
-        this.scanner = scanner;
+    public Data(IReader reader, IPrinter printer) {
+        this.reader = reader;
+        this.printer = printer;
     }
 
     @Override
     public void print(String text){
-        System.out.print(text);
+        printer.print(text);
     }
 
     @Override
     public void print(int number){
-        System.out.println(number);
+        printer.print(number);
     }
 
     @Override
     public int read(){
-       return scanner.nextInt();
-    }
-
-    @Override
-    public int input(String text){
-        print(text);
-        return read();
+       return reader.read();
     }
 }
