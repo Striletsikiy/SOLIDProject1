@@ -13,7 +13,7 @@ public class Model {
     }
 
     public void print(IService service){
-        service.calculate(a, b);
+        sum = service.calculate(a, b);
     }
 
     public void done(IData data){
