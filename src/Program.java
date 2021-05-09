@@ -1,4 +1,7 @@
 import io.Data;
+import io.IData;
+import model.Model;
+import service.IService;
 import service.ServiceSum;
 
 import java.util.Scanner;
@@ -6,14 +9,12 @@ import java.util.Scanner;
 public class Program {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
-        Data data = new Data(scanner);
-        ServiceSum service = new ServiceSum();
+        IData data = new Data(scanner);
+        IService service = new ServiceSum();
+        Model model = new Model();
 
-        int a = data.input("Enter a: ");
-        int b = data.input("Enter b: ");
-
-        int sum = service.calculate(a, b);
-        data.print("Result: ");
-        data.print(sum);
+        model.init(data);
+        model.print(service);
+        model.done(data);
     }
 }
