@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 public class Program {
     public static void main(String[] args) throws FileNotFoundException {
+
         //File file = new File("numbers.txt");
         //Scanner scanner = new Scanner(file);
 
